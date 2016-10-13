@@ -1,6 +1,5 @@
 from flask import Flask, request, redirect, render_template, session, flash
 import sys
-import jsonify
 
 sys.path.append('../')
 from sqlconnector.mysqlconnection import MySQLConnector
@@ -29,6 +28,6 @@ def post_data():
     # query = """SELECT * from posts"""
     data = {"description": request.form['description']}
     mysql.query_db(query, data)
-    return redirect('/posts') 
+    return redirect('/posts')
 
 app.run(debug=True)

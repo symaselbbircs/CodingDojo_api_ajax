@@ -12,8 +12,6 @@ mysql = MySQLConnector(app,'api_ajax') #using the db from friends assignment as 
 
 @app.route('/')
 def index():
-    query = """SELECT * from posts"""
-    res = mysql.query_db(query)
     return render_template('index.html')
 
 @app.route('/posts')
